@@ -4,4 +4,8 @@ var path = require('path');
 var fs = require('fs');
 var lib = path.join(path.dirname(fs.realpathSync(__filename)), '../lib');
 
-require(lib + '/1771278.js')();
+if(process.argv.length > 2) {
+    require(lib + '/1771278.js')(process.argv[2]);
+} else {
+    console.log('usage: 1771278 [filename]');
+}
